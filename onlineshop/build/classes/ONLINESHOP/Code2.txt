@@ -1,0 +1,36 @@
+Read Data
+-------------------
+
+Connection con=db();
+            Statement st=con.createStatement();
+             ResultSet rs=null;
+
+rs=st.executeQuery("select count(*) from customer where username='"+username.getText()+"' and password='"+password.getText()+"'");
+
+
+Insert Data
+-----------------------
+Connection con=db();
+            java.sql.Statement st=con.createStatement();
+            ResultSet rs=st.executeQuery("select * from customer");
+            int flag=0;
+            while(rs.next())
+            {
+                i=rs.getInt(1);
+                if(rs.getString(9).equals(username.getText()))
+                {
+                    flag=1;
+                    break;
+                }
+            }
+            i++;
+            if(flag==0)
+            {
+                st.executeQuery("insert into customer values('"+i+"','"+fname.getText()+"','"+mname.getText()+"','"+lname.getText()+"','"+dob+"','"+email.getText()+"','"+phone.getText()+"','"+location.getText()+"','"+username.getText()+"','"+password.getText()+"')");
+                //st.executeQuery("insert into joblogin values('"+username.getText()+"','"+password.getText()+"','cu')");
+                JOptionPane.showMessageDialog(null,"Account created successfully");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"This username is already taken, please choose a new username");
+            }

@@ -1,0 +1,50 @@
+create table register
+(
+name varchar(30),
+rname varchar(30),
+pas varchar(20),
+cpas varchar(20),
+mob number(10),
+addr varchar(50));
+
+
+create table payment
+(
+order_no number(20),
+amt varchar(30),
+mod varchar(30),
+pno varchar(20) primary key,
+cno varchar(20),
+month varchar(20),
+year number(10));
+
+
+create table alogin
+(
+aname varchar(20),
+apwd varchar(20));
+
+create table women
+(
+witem varchar(20),
+wprice varchar(20));
+
+create table men
+(
+mitem varchar(20),
+mprice varchar(20));
+
+create table kid
+(
+kitem varchar(20),
+kprice number(20));
+
+insert into alogin values('pooja','dhas123');
+
+insert into payment values('2000','debit','1134','7665098716352756','july','2016');
+
+insert into women values('pw1','10000');
+
+insert into men values('pm1','1000');
+insert into kid values('km1','1000');
+insert into register values('abc','abc123','xyz789','xyz789',9870987654,'hill road,bandra(w)');
